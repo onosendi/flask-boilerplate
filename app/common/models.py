@@ -1,4 +1,5 @@
 from datetime import datetime
+from typing import Union
 
 from app.extensions import db
 
@@ -6,7 +7,7 @@ from app.extensions import db
 class BaseMixin:
     id = db.Column(db.Integer, primary_key=True)
 
-    def commit(self) -> None:
+    def commit(self) -> Union[object, None]:
         try:
             db.session.add(self)
             db.session.commit()
