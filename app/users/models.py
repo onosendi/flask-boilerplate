@@ -27,7 +27,7 @@ class User(
     def __repr__(self) -> str:
         return f'<User {self.username}>'
 
-    def set_password(self, password: str):
+    def set_password(self, password: str) -> None:
         self.password = generate_password_hash(password)
 
     def check_password(self, password: str) -> bool:
