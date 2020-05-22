@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, render_template
 
 from config import DevelopmentConfig
 
@@ -10,6 +10,7 @@ def create_app(config: object = None) -> object:
         configure_extensions(app)
         configure_blueprints(app)
         configure_jinja(app)
+        configure_error_handlers(app)
         configure_logging(app)
     return app
 
@@ -47,6 +48,16 @@ def configure_jinja(app: object) -> None:
     # Filters
     from app.common.filters import truncate
     app.jinja_env.filters['truncate'] = truncate
+
+
+def configure_error_handlers(app: object) -> None:
+    @app.errorhandler(404)
+    def not_found_error(error):
+        return render_template('errors/404.html'), 404
+
+    @app.errorhandler(500)
+    def internal_error(error):
+        return render_template('errors/500.html'), 500
 
 
 def configure_logging(app: object) -> None:
