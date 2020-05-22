@@ -1,0 +1,11 @@
+.c-main-navigation {
+  display: flex;
+
+  &__item {
+    margin-left: 2rem;
+
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+}

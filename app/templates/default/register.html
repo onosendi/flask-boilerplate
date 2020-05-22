@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% from 'macros/field_errors.jinja' import field_errors %}
+
+{% block page_title %}Register - {{ APP_NAME }}{% endblock %}
+
+{% block content %}
+
+<form method="post" novalidate>
+  <div>
+    {{ form.email(placeholder=form.email.label.text) }}
+    {{ field_errors(form.email.errors) }}
+  </div>
+  <div>
+    {{ form.username(placeholder=form.username.label.text) }}
+    {{ field_errors(form.username.errors) }}
+  </div>
+  <div>
+    {{ form.password(placeholder=form.password.label.text) }}
+    {{ field_errors(form.password.errors) }}
+  </div>
+  <div>
+    {{ form.submit }}
+    {{ form.csrf_token }}
+  </div>
+</form>
+
+<p>
+  Already registered?
+  <a href="{{ url_for('default.login') }}">Login</a>
+</p>
+
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block page_title %}{{ current_user.username }} - {{ APP_NAME }}{% endblock %}
+
+{% block content %}
+
+{{ super() }}
+
+<h1>Welcome, {{ current_user.username }}!</h1>
+
+{% endblock %}

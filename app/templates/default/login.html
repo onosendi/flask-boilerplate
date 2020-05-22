@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block page_title %}Login - {{ APP_NAME }}{% endblock %}
+
+{% block content %}
+
+<form method="post" novalidate>
+  <div>
+    {{ form.login(placeholder=form.login.label.text) }}
+  </div>
+  <div>
+    {{ form.password(placeholder=form.password.label.text) }}
+  </div>
+  <div>
+    {{ form.submit }}
+    {{ form.csrf_token }}
+  </div>
+</form>
+
+<p>
+  Not a member?
+  <a href="{{ url_for('default.register') }}">Register</a>
+</p>
+
+{% endblock %}

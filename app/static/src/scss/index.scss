@@ -1,0 +1,31 @@
+@charset "UTF-8";
+
+// Based on the 7-1 pattern: https://sass-guidelin.es/#architecture
+// Sass boilerplate: https://github.com/HugoGiraudel/sass-boilerplate
+
+// Abstracts
+@import
+  'abstracts/variables';
+
+
+// Vendors
+
+
+// Base 
+@import
+  'base/reset',
+  'base/base';
+
+
+// Layouts
+
+
+// Components
+@import
+  'components/main-navigation';
+
+
+// Pages
+
+
+// Themes

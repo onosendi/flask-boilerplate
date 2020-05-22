@@ -1,0 +1,12 @@
+# Python
+__pycache__/
+*.py[co]
+venv/
+
+# npm
+node_modules/
+.cache/
+*.map
+
+# Flask
+*.db

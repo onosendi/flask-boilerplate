@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta name="description" content="{% block page_description %}{% endblock %}">
+
+  <title>{% block page_title %}{% endblock %}</title>
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='dist/main.css') }}">
+</head>
+<body>
+
+
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <ul class="c-messages">
+      {% for message in messages %}
+        <li class="c-messages__item">{{ message }}</li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+{% endwith %}
+
+
+{% block content %}
+
+<ul
+  aria-label="Main"
+  class="c-main-navigation"
+  role="navigation"
+>
+  <li class="c-main-navigation__item">
+    <a href="{{ url_for('default.index') }}">Home</a>
+  </li>
+
+  <li class="c-main-navigation__item">
+    <a href="{{ url_for('default.about') }}">About</a>
+  </li>
+
+  {% if current_user.is_authenticated %}
+    <li class="c-main-navigation__item">
+      <a href="{{ url_for('users.index') }}">{{ current_user.username }}</a>
+    </li>
+
+    <li class="c-main-navigation__item">
+      <a href="{{ url_for('default.logout') }}">Logout</a>
+    </li>
+  {% else %}
+    <li class="c-main-navigation__item">
+      <a href="{{ url_for('default.register') }}">Register</a>
+    </li>
+
+    <li class="c-main-navigation__item">
+      <a href="{{ url_for('default.login') }}">Login</a>
+    </li>
+  {% endif %}
+</ul>
+
+{% endblock %}
+
+
+<script src="{{ url_for('static', filename='dist/main.js') }}"></script>
+
+
+{% block script %}{% endblock %}
+
+</body>
+</html>
