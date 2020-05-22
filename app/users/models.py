@@ -1,8 +1,8 @@
 from flask_login import UserMixin
 from werkzeug.security import check_password_hash, generate_password_hash
 
-from app.extensions import db, login
 from app.common.models import BaseMixin, SoftDeleteMixin, TimestampMixin
+from app.extensions import db, login
 
 
 class User(
@@ -18,10 +18,7 @@ class User(
 
     def __init__(self, *args, **kwargs):
         # Set given email address to lowercase.
-        email = kwargs.get('email')
-        kwargs.update({
-            'email': email,
-        })
+        kwargs.update({'email': kwargs.get('email').lower()})
         super().__init__(*args, **kwargs)
 
     def __repr__(self) -> str:
