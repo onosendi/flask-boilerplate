@@ -15,9 +15,9 @@
 
 {% with messages = get_flashed_messages() %}
   {% if messages %}
-    <ul class="c-messages">
+    <ul>
       {% for message in messages %}
-        <li class="c-messages__item">{{ message }}</li>
+        <li>{{ message }}</li>
       {% endfor %}
     </ul>
   {% endif %}
