@@ -12,12 +12,12 @@ default_views = Blueprint('default', __name__)
 
 @default_views.route('/')
 def index():
-    return render_template('default/index.html')
+    return render_template('default/index.jinja')
 
 
 @default_views.route('/about')
 def about():
-    return render_template('default/about.html')
+    return render_template('default/about.jinja')
 
 
 @default_views.route('/login', methods=['get', 'post'])
@@ -64,7 +64,7 @@ def login():
         if not next_page or url_parse(next_page).netloc != '':
             next_page = url_for('users.index')
         return redirect(next_page)
-    return render_template('default/login.html', form=form)
+    return render_template('default/login.jinja', form=form)
 
 
 @default_views.route('/logout')
@@ -82,4 +82,4 @@ def register():
         user.commit()
         login_user(user)
         return redirect(url_for('users.index'))
-    return render_template('default/register.html', form=form)
+    return render_template('default/register.jinja', form=form)
