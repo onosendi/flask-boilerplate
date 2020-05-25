@@ -9,3 +9,10 @@ node_modules/
 
 # Flask
 *.db
+
+# The only reason '.env' exists in this repo is to show its contents
+# for the sake of this boilerplate. '.env' files should never be
+# included in your repo, whether it's public or private.
+#
+# The line below should be uncommented.
+# .env 
