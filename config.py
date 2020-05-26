@@ -16,6 +16,10 @@ class BaseConfig:
         or 'sqlite:///' + os.path.join(basedir, 'flask_boilerplate.db')
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 
+    # If set to True SQLAlchemy will log all the statements issued to stderr
+    # which can be useful for debugging.
+    SQLALCHEMY_ECHO = False
+
 
 class DevelopmentConfig(BaseConfig):
     DEBUG = True
