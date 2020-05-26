@@ -8,6 +8,9 @@
 
   <title>{% block page_title %}{% endblock %}</title>
 
+  <!-- Suppress favicon.ico 404 -->
+  <link href="data:;base64,iVBORw0KGgo=" rel="icon">
+
   <link rel="stylesheet" href="{{ url_for('static', filename='dist/main.css') }}">
 </head>
 <body>
