@@ -31,31 +31,31 @@
 
 <ul
   aria-label="Main"
-  class="c-main-navigation"
+  class="main-navigation"
   role="navigation"
 >
-  <li class="c-main-navigation__item">
+  <li class="main-navigation__item">
     <a href="{{ url_for('default.index') }}">Home</a>
   </li>
 
-  <li class="c-main-navigation__item">
+  <li class="main-navigation__item">
     <a href="{{ url_for('default.about') }}">About</a>
   </li>
 
   {% if current_user.is_authenticated %}
-    <li class="c-main-navigation__item">
+    <li class="main-navigation__item">
       <a href="{{ url_for('users.index') }}">{{ current_user.username }}</a>
     </li>
 
-    <li class="c-main-navigation__item">
+    <li class="main-navigation__item">
       <a href="{{ url_for('default.logout') }}">Logout</a>
     </li>
   {% else %}
-    <li class="c-main-navigation__item">
+    <li class="main-navigation__item">
       <a href="{{ url_for('default.register') }}">Register</a>
     </li>
 
-    <li class="c-main-navigation__item">
+    <li class="main-navigation__item">
       <a href="{{ url_for('default.login') }}">Login</a>
     </li>
   {% endif %}

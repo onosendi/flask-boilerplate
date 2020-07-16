@@ -1,7 +1,4 @@
-def truncate(
-    text: str,
-    max_length: int,
-) -> str:
+def truncate(text: str, max_length: int) -> str:
     ''' Truncate text if greater than `max_length`.
 
     :param text: Text to truncate

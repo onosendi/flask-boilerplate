@@ -1,5 +1,7 @@
 {% extends 'base.jinja' %}
 
+{% from 'macros/field_errors.jinja' import field_errors %}
+
 {% block page_title %}{{ current_user.username }} - {{ APP_NAME }}{% endblock %}
 
 {% block content %}
@@ -7,5 +9,34 @@
 {{ super() }}
 
 <h1>Welcome, {{ current_user.username }}!</h1>
+
+<form class="post-form" method="post" novalidate>
+  <div class="post-form__fields">
+    {{ form.body(placeholder=form.body.label.text) }}  
+    {{ form.submit(class='post-form__submit') }}
+    {{ form.csrf_token }}
+  </div>
+  <div>
+    {{ field_errors(form.body.errors) }}
+  </div>
+</form>
+
+{% if posts %}
+  <ul class="posts">
+    {% for post in posts %}
+      <li class="posts__item">
+        <p class="posts__body">{{ post.body }}</p>
+        <a
+          class="posts__button"
+          href="{{ url_for('posts.delete', post_id=post.id, next=url_for(request.endpoint)) }}"
+        >
+          Remove
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+{% else %}
+  <p>No posts to show</p>
+{% endif %}
 
 {% endblock %}

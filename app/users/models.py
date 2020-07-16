@@ -15,6 +15,8 @@ class User(
     username = db.Column(db.String(35), nullable=False, unique=True)
     email = db.Column(db.String(255), nullable=False, unique=True)
     password = db.Column(db.String(128), nullable=False)
+    posts = db.relationship('Post', backref='author', lazy='dynamic',
+                            order_by='desc(Post.created)')
 
     def __init__(self, *args, **kwargs):
         # Set given email address to lowercase.

@@ -1,0 +1,11 @@
+.post-form {
+  margin-bottom: 2rem;
+
+  &__fields {
+    display: flex;
+  }
+
+  &__submit {
+    margin-left: 1rem;
+  }
+}
