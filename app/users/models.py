@@ -1,8 +1,8 @@
 from flask_login import UserMixin
 from werkzeug.security import check_password_hash, generate_password_hash
 
+from app.common.extensions import db, login
 from app.common.models import BaseMixin, SoftDeleteMixin, TimestampMixin
-from app.extensions import db, login
 
 
 class User(

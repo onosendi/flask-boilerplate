@@ -1,5 +1,5 @@
+from app.common.extensions import db
 from app.common.models import BaseMixin, SoftDeleteMixin, TimestampMixin
-from app.extensions import db
 
 
 class Post(

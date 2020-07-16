@@ -18,7 +18,7 @@ def configure_app(app: object, config: object) -> None:
 
 
 def configure_extensions(app: object) -> None:
-    from app.extensions import db, migrate, login
+    from app.common.extensions import db, migrate, login
     db.init_app(app)
     migrate.init_app(app, db)
     login.init_app(app)

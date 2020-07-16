@@ -1,7 +1,7 @@
 from datetime import datetime
 from typing import Union
 
-from app.extensions import db
+from app.common.extensions import db
 
 
 class BaseMixin:
