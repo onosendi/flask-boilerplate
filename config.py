@@ -10,6 +10,7 @@ load_dotenv(os.path.join(basedir, '.env'))
 class BaseConfig:
     ''' Do not load this config directly. '''
     APP_NAME = 'Flask boilerplate'
+    LOGIN_REDIRECT_ENDPOINT = 'users.index';
     DEBUG = False
     SECRET_KEY = os.environ['SECRET_KEY']
     SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URI') \

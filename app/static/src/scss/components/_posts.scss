@@ -1,0 +1,28 @@
+.posts {
+  width: 50%;
+
+  &__button {
+    border: 1px solid grey;
+    padding: 0.25rem 1rem;
+    margin-left: auto;
+
+    &:hover {
+      border-color: red;
+    }
+  }
+
+  &__item {
+    align-items: center;
+    border-bottom: 1px solid grey;
+    display: flex;
+    padding: 2rem 0;
+
+    &:first-child {
+      padding-top: 0;
+    }
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+}

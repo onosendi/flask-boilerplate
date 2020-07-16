@@ -1,9 +1,7 @@
 from flask import Flask, render_template
 
-from config import DevelopmentConfig
 
-
-def create_app(config: object = None) -> object:
+def create_app(config: object) -> object:
     app = Flask(__name__)
     with app.app_context():
         configure_app(app, config)
@@ -15,12 +13,8 @@ def create_app(config: object = None) -> object:
     return app
 
 
-def configure_app(
-    app: object,
-    config: object = None,
-) -> None:
-    conf = config if config else DevelopmentConfig
-    app.config.from_object(conf)
+def configure_app(app: object, config: object) -> None:
+    app.config.from_object(config)
 
 
 def configure_extensions(app: object) -> None:
@@ -33,8 +27,9 @@ def configure_extensions(app: object) -> None:
 
 def configure_blueprints(app: object) -> None:
     from app.default.views import default_views
+    from app.posts.views import posts_views
     from app.users.views import users_views
-    for blueprint in [default_views, users_views]:
+    for blueprint in [default_views, posts_views, users_views]:
         app.register_blueprint(blueprint)
 
 
