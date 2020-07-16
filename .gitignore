@@ -1,11 +1,15 @@
 # Python
 __pycache__/
 *.py[co]
+venv/
 
 # npm
 node_modules/
 .cache/
 *.map
+
+# You'll want to ignore dist/. Uncomment the line blow.
+# dist/
 
 # Flask
 *.db

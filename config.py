@@ -25,9 +25,5 @@ class DevelopmentConfig(BaseConfig):
     DEBUG = True
 
 
-class TestingConfig(BaseConfig):
-    TESTING = True
-
-
 class ProductionConfig(BaseConfig):
     pass
