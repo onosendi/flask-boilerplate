@@ -1,4 +1,6 @@
-from flask import Blueprint, flash, redirect, render_template, request, url_for
+from flask import (
+    Blueprint, current_app, flash, redirect, render_template, request, url_for,
+)
 
 from flask_login import current_user, login_user, logout_user
 from sqlalchemy import func
@@ -23,7 +25,7 @@ def about():
 def login():
     # If the user is already authenticated, redirect them to their home page.
     if current_user.is_authenticated:
-        return redirect(url_for('users.index'))
+        return redirect(url_for(current_app.config['LOGIN_REDIRECT_ENDPOINT']))
 
     form = LoginForm()
 

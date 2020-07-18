@@ -12,5 +12,5 @@ def get_next_page(next_page: Union[str, None]) -> str:
     :param next_page: Next page to redirect the user to
     '''
     if not next_page or url_parse(next_page).netloc != '':
-        next_page = url_for(current_app.config.get('LOGIN_REDIRECT_ENDPOINT'))
+        next_page = url_for(current_app.config['LOGIN_REDIRECT_ENDPOINT'])
     return next_page
