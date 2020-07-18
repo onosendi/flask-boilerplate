@@ -1,3 +1,8 @@
+'''
+    Application entry point.
+
+    Use `flask run` to start the application.
+'''
 import os
 
 from app.app_factory import create_app
@@ -14,6 +19,10 @@ else:
 
 @app.shell_context_processor
 def make_shell_context():
+    ''' Populate the shell.
+
+    Use `flask shell`.
+    '''
     return {
         'app': app,
         'db': db,
