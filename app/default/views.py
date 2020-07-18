@@ -77,5 +77,5 @@ def register():
         user.set_password(form.password.data)
         user.commit()
         login_user(user)
-        return redirect(url_for('users.index'))
+        return redirect(url_for(current_app.config['LOGIN_REDIRECT_ENDPOINT']))
     return render_template('default/register.jinja', form=form)
