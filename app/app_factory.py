@@ -48,11 +48,11 @@ def configure_jinja(app: object) -> None:
 def configure_error_handlers(app: object) -> None:
     @app.errorhandler(404)
     def not_found_error(error):
-        return render_template('errors/404.html'), 404
+        return render_template('errors/404.jinja'), 404
 
     @app.errorhandler(500)
     def internal_error(error):
-        return render_template('errors/500.html'), 500
+        return render_template('errors/500.jinja'), 500
 
 
 def configure_logging(app: object) -> None:
