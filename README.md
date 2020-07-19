@@ -21,6 +21,18 @@ cd flask-boilerplate
 python -m virtualenv venv
 ```
 
+or
+
+```
+python -m venv venv
+```
+
+or
+
+```
+virtualenv venv
+```
+
 ### Enter your virtual environment
 
 ```
