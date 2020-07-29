@@ -18,7 +18,7 @@ cd flask-boilerplate
 ### Create your virtual environment
 
 ```
-python -m virtualenv venv
+python3 -m venv venv
 ```
 
 ### Enter your virtual environment
