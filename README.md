@@ -61,9 +61,9 @@ npm run build
 npm start
 ```
 
-### Run flask
+### Run Flask
 
-If you are running `npm start` for development, run flask in a separate terminal so both servers are running.
+If you are running `npm start` for development, run Flask in a separate terminal so both servers are running.
 
 ```
 flask run
