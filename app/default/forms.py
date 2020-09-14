@@ -8,21 +8,21 @@ from app.users.models import User
 
 class LoginForm(FlaskForm):
     login = wtforms.StringField(
-        'Email or username', validators=[v.DataRequired()])
+        validators=[v.DataRequired()])
     password = wtforms.PasswordField(
-        'Password', validators=[v.DataRequired()])
-    remember_me = wtforms.BooleanField('Remember me')
-    submit = wtforms.SubmitField('Login')
+        validators=[v.DataRequired()])
+    remember_me = wtforms.BooleanField()
+    submit = wtforms.SubmitField()
 
 
 class RegisterForm(FlaskForm):
-    username = wtforms.StringField(
-        'Username', validators=[v.DataRequired(), v.Length(max=35)])
     email = wtforms.StringField(
-        'Email', validators=[v.DataRequired(), v.Email(), v.Length(max=255)])
+        validators=[v.DataRequired(), v.Email(), v.Length(max=255)])
+    username = wtforms.StringField(
+         validators=[v.DataRequired(), v.Length(max=35)])
     password = wtforms.PasswordField(
-        'Password', validators=[v.DataRequired(), v.Length(min=4)])
-    submit = wtforms.SubmitField('Register')
+        validators=[v.DataRequired(), v.Length(min=4)])
+    submit = wtforms.SubmitField()
 
     def validate_email(self, email):
         ''' Make sure the given email is available. '''

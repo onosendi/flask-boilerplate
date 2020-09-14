@@ -8,19 +8,19 @@
 
 <form method="post" novalidate>
   <div>
-    {{ form.email(placeholder=form.email.label.text) }}
+    {{ form.email(placeholder='Email') }}
     {{ field_errors(form.email.errors) }}
   </div>
   <div>
-    {{ form.username(placeholder=form.username.label.text) }}
+    {{ form.username(placeholder='Username') }}
     {{ field_errors(form.username.errors) }}
   </div>
   <div>
-    {{ form.password(placeholder=form.password.label.text) }}
+    {{ form.password(placeholder='Password') }}
     {{ field_errors(form.password.errors) }}
   </div>
   <div>
-    {{ form.submit }}
+    {{ form.submit(value='Register') }}
     {{ form.csrf_token }}
   </div>
 </form>

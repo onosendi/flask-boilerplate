@@ -6,17 +6,17 @@
 
 <form method="post" novalidate>
   <div>
-    {{ form.login(placeholder=form.login.label.text) }}
+    {{ form.login(placeholder='Email or username') }}
   </div>
   <div>
-    {{ form.password(placeholder=form.password.label.text) }}
+    {{ form.password(placeholder='Password') }}
   </div>
   <div>
     {{ form.remember_me }}
-    {{ form.remember_me.label }}
+    <label for="remember_me">Remember me</label>
   </div>
   <div>
-    {{ form.submit }}
+    {{ form.submit(value='Login') }}
     {{ form.csrf_token }}
   </div>
 </form>
